@@ -1,74 +1,67 @@
-COLLECTIONS:
-users
-     {
-  "_id": "ObjectId",
-  "name": "String",
-  "email": "String",
-  "mentors": ["mentor_id"],
-  "codekata_problems_solved": "Number",
-  "attendance": [
-    {
-      "date": "Date",
-      "status": "String" // "Present" or "Absent"
-    }
-  ],
-  "tasks_submitted": [
-    {
-      "task_id": "ObjectId",
-      "submitted": "Boolean"
-    }
-  ]
+
+
+
+
+collections:
+{
+  "users": {
+    "_id": "ObjectId",
+    "name": "String",
+    "email": "String",
+    "attendance": [
+      {
+        "date": "Date",
+        "status": "String" // 'Present' or 'Absent'
+      }
+    ],
+    "tasks": [
+      {
+        "task_id": "ObjectId",
+        "submitted": "Boolean",
+        "submission_date": "Date"
+      }
+    ],
+    "codekata_problems_solved": "Number",
+    "mentor_id": "ObjectId"
+  },
+  "codekata": {
+    "_id": "ObjectId",
+    "problem": "String",
+    "difficulty": "String" // e.g., 'Easy', 'Medium', 'Hard'
+  },
+  "attendance": {
+    "user_id": "ObjectId",
+    "date": "Date",
+    "status": "String" // 'Present' or 'Absent'
+  },
+  "topics": {
+    "_id": "ObjectId",
+    "name": "String",
+    "date": "Date"
+  },
+  "tasks": {
+    "_id": "ObjectId",
+    "name": "String",
+    "date": "Date",
+    "topic_id": "ObjectId"
+  },
+  "company_drives": {
+    "_id": "ObjectId",
+    "company_name": "String",
+    "date": "Date",
+    "students_appeared": [
+      "ObjectId" // user_ids
+    ]
+  },
+  "mentors": {
+    "_id": "ObjectId",
+    "name": "String",
+    "mentees": [
+      "ObjectId" // user_ids
+    ]
+  }
 }
-codekata
 
-
-             {
-  "_id": "ObjectId",
-  "user_id": "ObjectId",
-  "problems_solved": "Number"
-}
-Attendance 
-
-
-          {
-  "_id": "ObjectId",
-  "user_id": "ObjectId",
-  "date": "Date",
-  "status": "String" // "Present" or "Absent"
-}
-Topics
-
-
-     {
-  "_id": "ObjectId",
-  "name": "String",
-  "date": "Date"
-}
-Tasks
-
-         {
-  "_id": "ObjectId",
-  "name": "String",
-  "topic_id": "ObjectId",
-  "date": "Date"
-}
-CompanyDrives
-
-
-          {
-  "_id": "ObjectId",
-  "company_name": "String",
-  "date": "Date",
-  "students_appeared": ["user_id"]
-}
-mentors
-
-
-       {
-  "_id": "ObjectId",
-  "name": "String",
-  "mentees": ["user_id"]
-}
 
 
 
