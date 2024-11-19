@@ -1,7 +1,6 @@
 COLLECTIONS:
 users
-
-       {
+     {
   "_id": "ObjectId",
   "name": "String",
   "email": "String",
